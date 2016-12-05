@@ -10,7 +10,6 @@ const passportMiddleware = require('./../middlewares/passport.midleware');
 router.param('comment_id', (req, res, next, id) => {
   return daoComment.findOne(id)
     .then((comment) => {
-    console.log('meow', comment);
       req.comment = comment;
       return next();
     })

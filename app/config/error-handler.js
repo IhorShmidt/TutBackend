@@ -17,7 +17,6 @@ module.exports = (app) => {
       error: err.error,
       message: err.message
     };
-    console.log(err);
     res.status(error.code).json(error);
   });
 

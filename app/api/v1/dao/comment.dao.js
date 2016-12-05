@@ -13,7 +13,6 @@ module.exports.create = (data) => {
   _.assign(comment, data);
   return comment.save()
     .catch((err) => {
-      console.log(err);
       throw errorHelper.serverError(err);
     });
 };
