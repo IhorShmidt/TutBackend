@@ -4,7 +4,7 @@ const chai = require('chai');
 const mocha = require('mocha');
 chai.should();
 
-const passportMiddleware = require('./../../../../app/api/v1/middlewares/passport');
+const passportMiddleware = require('./../../../../app/api/v1/middlewares/passport.midleware');
 const passportUtil = require('./../../../../app/utils/passport');
 
 mocha.describe('Middleware passport:', () => {

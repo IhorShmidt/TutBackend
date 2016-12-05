@@ -1,6 +1,6 @@
 'use strict';
 
-const daoUser = require('./../dao/user');
+const daoUser = require('./../dao/user.dao');
 
 const errorHelper = require('./../../../utils/errorHelper');
 const passportUtil = require('./../../../utils/passport');

@@ -1,5 +1,6 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const mongoose = require('mongoose'),
+    Schema = mongoose.Schema,
+    ObjectId = require('mongoose').Types.ObjectId;
 
 const CommentSchema = new Schema({
     text: {
@@ -8,10 +9,9 @@ const CommentSchema = new Schema({
         required: true,
         default: ''
     },
-    // author: {type: ObjectId, ref: 'user'},
-    likes: {
-        type: Number
-    }
+    author: {type: ObjectId, ref: 'user'},
+    post: {type: ObjectId, ref: 'Post'},
+    likes: { type: Number }
 }, {
     strict: false,
     timestamps: true

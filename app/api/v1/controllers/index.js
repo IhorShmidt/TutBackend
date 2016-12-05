@@ -8,7 +8,8 @@ router.get('/', (req, res) => {
 });
 
 router.use('/users', require('./users'));
-router.use('/auth', require('./auth'));
-router.use('/posts', require('./posts'));
+router.use('/auth', require('./auth.controller'));
+router.use('/posts', require('./posts.controller'));
+router.use('/comment', require('./comment.controller'));
 
 module.exports = router;

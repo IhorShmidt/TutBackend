@@ -2,7 +2,6 @@
 
 
 const mongoose = require('mongoose'),
-    commentSchema = require('./comment.model'),
     Schema = mongoose.Schema,
     ObjectId = require('mongoose').Types.ObjectId;
 
