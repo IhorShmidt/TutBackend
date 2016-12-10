@@ -23,8 +23,15 @@ router.post('/', passportMiddleware.checkAuthToken, (req, res, next) => {
     .catch((err) => next(err));
 });
 
-router.get('/', passportMiddleware.checkAuthToken, (req, res, next) => {
+router.get('/', (req, res, next) => {
   return daoPost.getAll()
+    .then((post) => res.json(post))
+    .catch((err) => next(err));
+});
+
+router.get('/:author', (req, res, next) => {
+   console.log(req.params.author);
+  return daoPost.getAllPosts({author:req.params.author})
     .then((post) => res.json(post))
     .catch((err) => next(err));
 });

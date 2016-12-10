@@ -7,8 +7,8 @@
     "start": "nodemon ./app/",
     "test": "set NODE_ENV=test ./node_modules/.bin/mocha test/** --recursive",
     "cover": "set NODE_ENV=test ./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec test/** --recursive",
-    "jslinter": "./node_modules/.bin/eslint app/** test/**",
-    "apidoc": "./node_modules/apidoc/bin/apidoc -i app/ -o apidoc/",
+    "jslinter": "set NODE_ENV=test ./node_modules/.bin/eslint app/** test/**",
+    "apidoc": "set NODE_ENV=test ./node_modules/apidoc/bin/apidoc -i app/ -o apidoc/",
     "postinstall": "npm run cover && npm run apidoc"
   },
   "dependencies": {

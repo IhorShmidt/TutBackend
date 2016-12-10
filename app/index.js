@@ -5,12 +5,15 @@ const http = require('http');
 const path = require('path');
 const env = process.env.NODE_ENV || 'local';
 const _config = require('./config/_config.json')[env];
+const morgan =  require('morgan');
+
 
 const app = express();
 // Bootstrap application settings
 app.set('env', env);
 
 require('./config/express')(app);
+app.use(morgan('dev'));
 
 // Routing
 app.use('/v1', require('./api/v1/controllers'));

@@ -14,6 +14,7 @@ module.exports.create = (data) => {
   _.assign(post, data, data.body);
   return post.save()
   .catch((err) => {
+    console.log(err);
     throw errorHelper.serverError(err);
   });
 };
@@ -36,6 +37,16 @@ module.exports.modify = (data) => {
     });
 };
 
+module.exports.getAllPosts = (data) => {
+
+
+  return postsModel.find({author:data.author})
+    .populate('author')
+    .catch((err) => {
+    throw errorHelper.serverError(err);
+  });
+};
+
 module.exports.getAll = () => {
   return postsModel.find().catch((err) => {
     throw errorHelper.serverError(err);
@@ -49,7 +60,7 @@ module.exports.remove = (data) => {
     author: data.user.id,
     post: data.id
   }).then((result) => {
-    _.each(result, item => promsie.push(item.remove()));
+    _.each(result, item => promise.push(item.remove()));
     return Promise.all(promise).then((result) => result)
       .catch((err) => {throw errorHelper.serverError(err)});
   })

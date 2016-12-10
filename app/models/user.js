@@ -47,4 +47,4 @@ user.path('email').validate((value) => {
   return emailRegex.test(value);
 }, 'Please fill a valid email address');
 
-module.exports = mongoose.model('user', user);
+module.exports = mongoose.model('User', user);

@@ -11,7 +11,8 @@ const post = new Schema({
     trim: true
   },
   text: {
-    type: String
+    type: String,
+    trim: true
   },
   author: {
     type: ObjectId,
