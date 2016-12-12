@@ -38,9 +38,7 @@ module.exports.modify = (data) => {
 };
 
 module.exports.getAllPosts = (data) => {
-
-
-  return postsModel.find({author:data.author})
+  return postsModel.find({author:data.author}).sort({createdAt: -1})
     .populate('author')
     .catch((err) => {
     throw errorHelper.serverError(err);
